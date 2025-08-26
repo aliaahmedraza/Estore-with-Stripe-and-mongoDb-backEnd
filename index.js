@@ -1,8 +1,8 @@
 import express from "express";
-import dbConfig from "./db/config.js";
+import dbConfig from "./src/db/config.js";
 import cors from "cors";
-import stripeRouter from "./routers/stripeRouter.js";
-import orderRouter from "./routers/orderRouter.js";
+import stripeRouter from "./src/routers/stripeRouter.js";
+import orderRouter from "./src/routers/orderRouter.js";
 
 const app = express();
 app.use(express.static("public"));
