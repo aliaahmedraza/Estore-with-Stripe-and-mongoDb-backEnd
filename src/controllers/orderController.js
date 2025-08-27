@@ -1,7 +1,7 @@
 import Stripe from "stripe";
 import orderModel from "../models/order/order.js";
 
-const stripe = new Stripe(process.env.SECRET_KEY.trim());
+const stripe = new Stripe(process.env.SECRET_KEY);
 
 const orderController = async (req, res) => {
   const sig = req.headers["stripe-signature"];
