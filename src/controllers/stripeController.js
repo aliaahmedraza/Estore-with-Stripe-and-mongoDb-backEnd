@@ -23,8 +23,10 @@ const stripeController = async (req, res) => {
         },
         quantity: item.quantity,
       })),
-      success_url: "http://localhost:5173/success",
-      cancel_url: "http://localhost:5173/cancel",
+      success_url:
+        "https://estore-with-stripe-and-mongo-db-fro.vercel.app/success",
+      cancel_url:
+        "https://estore-with-stripe-and-mongo-db-fro.vercel.app/cancel",
       metadata: { userId },
       payment_intent_data: {
         metadata: { userId },

@@ -8,7 +8,9 @@ const app = express();
 app.use(express.static("public"));
 const PORT = process.env.PORT || 5000;
 dbConfig;
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(
+  cors({ origin: "https://estore-with-stripe-and-mongo-db-fro.vercel.app" })
+);
 app.use("/webhook", express.raw({ type: "application/json" }), orderRouter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
