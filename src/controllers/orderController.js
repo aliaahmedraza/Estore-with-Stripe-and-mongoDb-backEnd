@@ -1,7 +1,7 @@
 import Stripe from "stripe";
 import orderModel from "../models/order/order.js";
 
-const stripe = new Stripe(process.env.SECRET_KEY);
+const stripe = new Stripe(process.env.SECRET_KEY.trim());
 
 const orderController = async (req, res) => {
   const sig = req.headers["stripe-signature"];
@@ -11,7 +11,7 @@ const orderController = async (req, res) => {
     event = stripe.webhooks.constructEvent(
       req.body,
       sig,
-      process.env.STRIPE_WEBHOOK_SECRET
+      process.env.STRIPE_WEBHOOK_SECRET.trim()
     );
   } catch (err) {
     console.error("⚠️ Webhook signature verification failed:", err.message);
